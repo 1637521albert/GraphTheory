@@ -68,7 +68,11 @@ if __name__ == "__main__":
     # Inspeccionar la estructura de los datos cargados
     print("Tipo de datos cargados:", type(data))
 
-    # Extraer y graficar el centro de reacción
-    reaction = data[10]
-    reaction_center = clustering_with_invariants(reaction)
-    plot(reaction, reaction_center)
+    # Extract and plot the reaction center of the first 30 reactions
+    for i in range(30):
+        reaction = data[i]
+        reaction_center = extract_reaction_center(reaction)
+        plot(reaction, reaction_center)
+    # reaction = data[10]
+    # reaction_center = clustering_with_invariants(reaction)
+    # plot(reaction, reaction_center)
