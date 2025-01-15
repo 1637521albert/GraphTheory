@@ -1,5 +1,5 @@
 from wp1 import load_data, extract_reaction_center, plot
-from wp2 import clustering, plot_clusters
+from wp2 import clustering
 
 
 if __name__ == "__main__":
@@ -16,8 +16,6 @@ if __name__ == "__main__":
     for i, cluster in enumerate(clusters[:10]):
         print(f"Cluster {i + 1} has {len(cluster)} reaction centers.")
 
-    # Plot the clusters
-    plot_clusters(reactions, clusters)
     
 
     
