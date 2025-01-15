@@ -70,5 +70,5 @@ if __name__ == "__main__":
 
     # Extraer y graficar el centro de reacción
     reaction = data[10]
-    reaction_center = extract_reaction_center(reaction)
+    reaction_center = clustering_with_invariants(reaction)
     plot(reaction, reaction_center)
