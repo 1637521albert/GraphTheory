@@ -67,7 +67,7 @@ if __name__ == "__main__":
         "Weisfeiler-Lehman Clustering (Version 2)", clustering_with_invariants, reaction_subset, iterations=5, max_cluster_size=20)
     
     # Test wp6 (Extended Reaction Center Clustering)
-    clusters_wp5, time_wp5 = benchmark_clustering(
+    clusters_wp6, time_wp6 = benchmark_clustering(
         "Extended Reaction Center Clustering", clustering_with_extended_centers, reaction_subset, L=3)
 
     # Analyze graph invariants
@@ -80,13 +80,13 @@ if __name__ == "__main__":
         f.write(f"WP3 (Graph Invariants + Isomorphism) Clustering Time: {time_wp3:.2f} seconds\n")
         f.write(f"Weisfeiler-Lehman Clustering (Version A) Time: {time_wl:.2f} seconds\n")
         f.write(f"Weisfeiler-Lehman Clustering (Version B) Time: {time_wl_v2:.2f} seconds\n")
-        f.write(f"Extended Reaction Center Clustering Time: {time_wp5:.2f} seconds\n\n")
+        f.write(f"Extended Reaction Center Clustering Time: {time_wp6:.2f} seconds\n\n")
         f.write("Cluster Sizes:\n")
         f.write(f"WP2 Clusters: {[len(cluster) for cluster in clusters_wp2]}\n")
         f.write(f"WP3 Clusters: {[len(cluster) for cluster in clusters_wp3]}\n")
         f.write(f"Weisfeiler-Lehman Clusters (Version A): {[len(cluster) for cluster in clusters_wl.values()]}\n")
         f.write(f"Weisfeiler-Lehman Clusters (Version B): {[len(cluster) for cluster in clusters_wl_v2]}\n")
-        f.write(f"Extended Reaction Center Clusters: {[len(cluster) for cluster in clusters_wp5]}\n\n")
+        f.write(f"Extended Reaction Center Clusters: {[len(cluster) for cluster in clusters_wp6]}\n\n")
         f.write("Graph Invariants Analysis:\n")
         for i, invariants in enumerate(graph_invariants_results):
             f.write(f"Reaction {i + 1}: {invariants}\n")
